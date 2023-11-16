@@ -1,0 +1,686 @@
+ @font-face {
+    font-family: 'Minal';
+    src: url('./Minal.otf') format('opentype');
+}
+
+/*
+body {
+    font-family: 'Minal', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+} */
+
+
+:root{
+    --primary:#BBB0A4;
+    --secondary:#504236;
+    --gris:#303030;
+    --gris-f:#757575;
+    --negro:black;
+    --blanco:white;
+
+    /* tipografia */
+    --Tprincipal: "Minal", serif;
+    --Tsecundaria: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    object-fit: cover;
+    vertical-align: center center;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+video {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    object-fit: cover;
+    vertical-align: center center;
+}
+
+p a {
+    display: inline;
+}
+
+li {
+    list-style-type: none;
+}
+
+table,
+tr,
+td {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+::selection{
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+
+form,
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size:  inherit;
+    -webkit-hyphens: auto;
+            hyphens: auto;
+    display: flex;
+    color: inherit;
+}
+
+body{
+    font-family: var(--Tprincipal);
+    font-size: 100%;
+    min-height: 100vh;
+    background-color: var(--primary);
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+
+
+.circulos {
+    /* position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: lightblue;
+    z-index: 1; */
+}
+
+.circulos .circulo {
+
+}
+
+
+/* .header {
+    width: 100%;
+    min-height: 5em;
+    background-color: #BBB0A4;
+}
+
+.header .nav {
+ background-color: red;
+}
+
+.header .ul{
+
+}
+
+.header .li{
+
+}
+
+.header .li .a{
+
+} */
+
+.header {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 40;
+}
+
+.header .nav {
+    background-color: rgba(153, 104, 51, 0.267);
+    padding: 5px;
+    border-radius: 90px;
+    margin: auto;
+}
+
+.header .nav .ul {
+    display: flex;
+    
+}
+
+
+
+.header .li .a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--secondary); /* Puedes ajustar el color del fondo según tu diseño */
+    color: var(--blanco);
+    margin: 0rem 0.5rem;
+}
+
+.header .li .a:hover {
+    background-color: #7c664f;
+}
+
+
+
+
+
+/* Inicio */
+.seccion1 {
+    position: relative; /* Asegura que el z-index funcione correctamente */
+    width: 100%;
+    height: 100vh;
+}
+
+.seccion1 .img {
+    filter: blur(2px);
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ajusta la imagen para cubrir todo el contenedor */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Coloca la imagen detrás del contenido principal */
+    opacity: 0.5; /* Aplica la transparencia a la imagen de fondo */
+}
+
+.seccion1 .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.seccion1 .section .h2 {
+    font-size: 180px;
+    color: var(--secondary);
+}
+
+.seccion1 .section .h3 {
+    font-size: 30px;
+    color: var(--secondary);
+}
+
+.seccion1 .section .p {
+    font-size: 1em;
+    font-family: var(--Tsecundaria);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 55ch;
+    padding: 10px; 
+}
+
+
+
+
+
+
+/* Proyectos */
+.seccion2 {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.seccion2 .img{
+    width: 25%;
+    height: 50%;
+    object-fit: contain;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.5;
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.5));
+    animation: flotar 3s infinite alternate;
+}
+
+/* Definir la animación "flotar" usando keyframes */
+@keyframes flotar {
+  0% {
+    transform: translateY(0); /* Inicio: sin desplazamiento vertical */
+  }
+  50% {
+    transform: translateY(-30px); /* Mitad: desplazamiento hacia arriba */
+  }
+  100% {
+    transform: translateY(0); /* Fin: regresa a la posición inicial */
+  }
+}
+.seccion2 .h2{
+    padding: 1rem;
+    font-size: 190px;
+    color: var(--secondary);
+}
+.seccion2 .flex { 
+    width: 100%;
+    background-color: #f5f5f500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.seccion2 .flex .article{
+    width: 90%;
+    min-height: 20vh;
+    background-color: #f5f5f500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.seccion2 .flex .article .a{
+
+}
+.seccion2 .flex .article .imgT{
+    width: 25%;
+    object-fit: contain;
+}
+
+.seccion2 .flex .article .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem; 
+}
+
+.seccion2 .flex .article .text .h4{
+    font-size: 2rem;
+    color: var(--secondary);
+}
+
+.seccion2 .flex .article .text .descripcion{
+    font-family: var(--Tsecundaria);
+    font-size: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 80ch;
+    padding: 1rem 0  1rem 0 ;
+    color: var(--gris);
+}
+
+.seccion2 .flex .article .text .tech{
+    font-family: var(--Tsecundaria);
+    font-size: 0.8rem;
+    color: var(--gris);
+    flex-wrap: wrap;
+    display: flex;
+    gap: 0.5rem;
+    
+}
+
+.seccion2 .flex .article .text .tech .p{
+    background-color: var(--gris-f);
+    padding: 0.5rem;
+    border: 2px solid var(--gris-f);
+    border-radius: 1rem;
+}
+
+
+
+
+
+
+/* sobre mi */
+.seccion3 {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .seccion3 .img {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    object-fit: contain;
+    right: 30%;
+    opacity: 0.5;
+}
+  
+  /* Estilos para el título h2 en la sección 3 */
+  .seccion3 .h2 {
+    padding: 0 1em 0 0;
+    font-size: 190px; /* Ajusta el tamaño según sea necesario */
+    color: var(--secondary);
+    text-align: end;
+  }
+  
+  /* Estilos para los elementos flex dentro de la sección 3 */
+  .seccion3 .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); /* Define la cuadrícula con columnas autoajustables */
+    padding: 20px; /* Ajusta el relleno según sea necesario */
+    margin: 0px 25%;
+  }
+
+  .seccion3 .grid .box {
+    /* Ajustes para cada cuadro dentro de la cuadrícula */
+    background-color: var(--secondary); /* Ajusta el color de fondo según sea necesario */
+    border: 1px solid var(--gris-f); /* Ajusta el borde según sea necesario */
+    padding: 2rem; /* Ajusta el relleno según sea necesario */
+    border-radius: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 1rem;
+  }
+  
+  /* Estilos para el título h5 dentro de la sección 3 */
+  .seccion3 .grid .box .h5 {
+    margin: 0.5rem 0;
+    color: var(--primary);
+    font-size: 2rem; /* Ajusta el tamaño según sea necesario */
+  }
+  
+  /* Estilos para el párrafo p dentro de la sección 3 */
+  .seccion3 .grid .box .p {
+    height: 190px;
+    font-family: var(--Tsecundaria);
+    font-size: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 55ch; /* Ajusta el ancho según sea necesario */
+    color: var(--primary);
+
+    /* Añade estos estilos para centrar el contenido verticalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .seccion3 .footer {
+    margin: auto;
+    font-family: var(--Tprincipal);
+    font-size: 1.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 80ch;
+    color: var(--secondary);
+    text-align: center;
+  }
+  
+
+
+
+
+ 
+/* habilidades */
+.seccion4 {
+    
+    width: 100%;
+    height: 100vh;
+}
+.seccion4 .container {
+    position: relative;
+    background-color: var(--primary);
+
+}
+
+.seccion4 .h2 {
+    position: absolute;
+    font-size: 180px;
+    color: var(--secondary);
+    writing-mode: vertical-rl;
+    height: 100%;
+    transform: rotate(180deg);
+    text-align: start;
+    margin: auto;
+}
+
+.seccion4 .flex2 {
+    margin: 0 0 0 300px;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.seccion4 .flex2 .subdiv {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    z-index: 10;
+}
+
+.seccion4 .flex2 .subdiv .h5 {
+    display: inline;
+    width: 260px;
+    color: var(--secondary);
+    font-size: 2rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+.seccion4 .flex2 .subdiv .ul {
+
+    font-family: var(--Tsecundaria);
+    font-size: 1rem;
+    width: 445px;
+}
+
+.seccion4 .flex2 .subdiv .ul .li {
+    margin: 0.5rem 0px;
+    font-family: var(--Tsecundaria);
+    color: var(--gris);
+}
+
+.seccion4 .container .img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+    position: absolute;
+    z-index: 1;
+
+    top: 50%; /* Ajusta la posición vertical según sea necesario */
+    right: 0; /* Posiciona la imagen a la derecha de la pantalla */
+    left: 50%;
+    transform: translateY(-50%);
+    opacity: 0.3;
+}
+
+
+
+
+
+
+/* coctactame */
+.seccion5{
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+}
+
+.seccion5 .img {
+    position: absolute;
+    z-index: -1;
+    height:100%;
+    opacity: 0.3;
+}
+
+.seccion5 .h2{
+    padding: 1rem;
+    font-size: 190px; /* Ajusta el tamaño según sea necesario */
+    color: var(--secondary);
+    text-align: center;
+}
+
+.seccion5 .ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.seccion5 .ul .li {
+    width: 100px;
+    height: 100px;
+    background-color: var(--secondary);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/*Footer*/
+.seccion5 .footer {
+    width: 100%;
+    background-color: #303030;
+    text-align: end;
+    padding:  0 0.5rem;
+}
+
+.seccion5 .footer .span {
+    font-family: var(--Tsecundaria);
+    font-size: 14px;
+    color: var(--blanco);
+}
+
+
+
+
+/* .separator {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    overflow: hidden;
+    animation: moveSeparator 10s linear infinite;
+}
+
+.img1, .img2 {
+    flex: 1;
+    height: 300px;
+    object-fit: contain;
+}
+
+.img1 {
+    background-color: red;
+}
+
+.img2 {
+    background-color: blue;
+}
+
+@keyframes moveSeparator {
+    0%, 100% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+} */
+
+
+.separator {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    overflow: hidden;
+}
+
+.separator .flying {
+    width: 100%; /* Cambiar el ancho de las nubes */
+    height: 300px;
+    opacity: 1;
+}
+
+/* Añadir clases únicas para las imágenes */
+.separator .flying:nth-child(1) {
+    position: absolute;
+    background-color: red;
+    animation: flyAnimation1 5s linear infinite;
+    animation-delay: 5s; /* Aplicar la animación 1 */
+}
+
+.separator .flying:nth-child(2) {
+    position: absolute;
+    background-color: blue;
+    animation: flyAnimation2 5s linear infinite; /* Aplicar la animación 2 */
+}
+
+@keyframes flyAnimation1 {
+    0% {
+        transform: translateX(-50%); /* Posición inicial */
+      }
+      100% {
+        transform: translateX(100%); /* Posición final */
+      }
+}
+
+@keyframes flyAnimation2 {
+    0% {
+        transform: translateX(50%); /* Posición inicial */
+      }
+      100% {
+        transform: translateX(200%); /* Posición final */
+      }
+}
+
+
+
+
+/* @keyframes moveImage {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes moveImage2 {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+} */
