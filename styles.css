@@ -16,8 +16,8 @@ body {
 
 
 :root{
-    --primary:#BBB0A4;
-    --secondary:#504236;
+    --primary:#1A1A1A;
+    --secondary:#F9F9F9;
     --gris:#303030;
     --gris-f:#757575;
     --negro:black;
@@ -110,7 +110,7 @@ body{
     font-family: var(--Tprincipal);
     font-size: 100%;
     min-height: 100vh;
-    background-color: var(--primary);
+    
     font-smooth: always;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -122,17 +122,60 @@ body{
 
 
 .circulos {
-    /* position: fixed;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    background-color: lightblue;
-    z-index: 1; */
+    background-color: black;
+    z-index: -1;
+    filter: blur(2em);
+    animation: circulo1 20s linear infinite both;
 }
 
 .circulos .circulo {
-
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    animation: circulo1 100s linear infinite both;
+    
+}
+.circulos .circulo-1{
+    top: 0%;
+    left: 0%;
+    
+}
+@keyframes circulo1{
+    from{
+        transform: rotate(0deg) scale(3);
+    }
+    to{
+        transform: rotate(360deg) scale(3);
+    }
+}
+.circulos .circulo-1 .path{
+    fill: red;
+}
+.circulos .circulo-2{
+    top: 0%;
+    right: 0%;
+}
+.circulos .circulo-2 .path{
+    fill: yellow;
+}
+.circulos .circulo-3{
+    bottom: 0%;
+    left: 0%;
+}
+.circulos .circulo-3 .path{
+    fill: blue;
+}
+.circulos .circulo-4{
+    bottom: 0%;
+    right: 0%;
+}
+.circulos .circulo-4 .path{
+    fill: green;
 }
 
 
@@ -166,11 +209,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 40;
+    z-index: 3;
 }
 
 .header .nav {
-    background-color: rgba(153, 104, 51, 0.267);
+    background-color: rgba(0, 0, 0, 0.267);
     padding: 5px;
     border-radius: 90px;
     margin: auto;
@@ -178,7 +221,6 @@ body{
 
 .header .nav .ul {
     display: flex;
-    
 }
 
 
@@ -193,10 +235,17 @@ body{
     background-color: var(--secondary); /* Puedes ajustar el color del fondo según tu diseño */
     color: var(--blanco);
     margin: 0rem 0.5rem;
+    transition: background-color 0.3s ease; /* Agregamos una transición suave */
 }
 
 .header .li .a:hover {
-    background-color: #7c664f;
+    background-color: #383838;
+}
+
+.main {
+    text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -205,22 +254,10 @@ body{
 
 /* Inicio */
 .seccion1 {
-    position: relative; /* Asegura que el z-index funcione correctamente */
     width: 100%;
     height: 100vh;
 }
 
-.seccion1 .img {
-    filter: blur(2px);
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Ajusta la imagen para cubrir todo el contenedor */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1; /* Coloca la imagen detrás del contenido principal */
-    opacity: 0.5; /* Aplica la transparencia a la imagen de fondo */
-}
 
 .seccion1 .section {
     display: flex;
@@ -234,6 +271,7 @@ body{
 .seccion1 .section .h2 {
     font-size: 180px;
     color: var(--secondary);
+    text-align: center;
 }
 
 .seccion1 .section .h3 {
@@ -242,6 +280,7 @@ body{
 }
 
 .seccion1 .section .p {
+    color: var(--secondary);
     font-size: 1em;
     font-family: var(--Tsecundaria);
     word-wrap: break-word;
@@ -257,33 +296,10 @@ body{
 
 /* Proyectos */
 .seccion2 {
-    position: relative;
     width: 100%;
     height: auto;
 }
-.seccion2 .img{
-    width: 25%;
-    height: 50%;
-    object-fit: contain;
-    position: absolute;
-    z-index: -1;
-    opacity: 0.5;
-    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.5));
-    animation: flotar 3s infinite alternate;
-}
 
-/* Definir la animación "flotar" usando keyframes */
-@keyframes flotar {
-  0% {
-    transform: translateY(0); /* Inicio: sin desplazamiento vertical */
-  }
-  50% {
-    transform: translateY(-30px); /* Mitad: desplazamiento hacia arriba */
-  }
-  100% {
-    transform: translateY(0); /* Fin: regresa a la posición inicial */
-  }
-}
 .seccion2 .h2{
     padding: 1rem;
     font-size: 190px;
@@ -361,19 +377,10 @@ body{
 
 /* sobre mi */
 .seccion3 {
-    position: relative;
     width: 100%;
     height: auto;
   }
 
-  .seccion3 .img {
-    position: absolute;
-    z-index: -1;
-    height: 100%;
-    object-fit: contain;
-    right: 30%;
-    opacity: 0.5;
-}
   
   /* Estilos para el título h2 en la sección 3 */
   .seccion3 .h2 {
@@ -381,6 +388,7 @@ body{
     font-size: 190px; /* Ajusta el tamaño según sea necesario */
     color: var(--secondary);
     text-align: end;
+    text-wrap: nowrap;
   }
   
   /* Estilos para los elementos flex dentro de la sección 3 */
@@ -393,8 +401,8 @@ body{
 
   .seccion3 .grid .box {
     /* Ajustes para cada cuadro dentro de la cuadrícula */
-    background-color: var(--secondary); /* Ajusta el color de fondo según sea necesario */
-    border: 1px solid var(--gris-f); /* Ajusta el borde según sea necesario */
+    background-color: rgba(0, 0, 0, 0.2); /* Ajusta el color de fondo según sea necesario */
+
     padding: 2rem; /* Ajusta el relleno según sea necesario */
     border-radius: 1rem;
     display: flex;
@@ -403,24 +411,23 @@ body{
     margin: 1rem;
   }
   
-  /* Estilos para el título h5 dentro de la sección 3 */
+  
   .seccion3 .grid .box .h5 {
     margin: 0.5rem 0;
-    color: var(--primary);
-    font-size: 2rem; /* Ajusta el tamaño según sea necesario */
+    color: var(--secondary);
+    font-size: 2rem; 
   }
   
-  /* Estilos para el párrafo p dentro de la sección 3 */
+
   .seccion3 .grid .box .p {
     height: 190px;
     font-family: var(--Tsecundaria);
     font-size: 1rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    max-width: 55ch; /* Ajusta el ancho según sea necesario */
-    color: var(--primary);
+    max-width: 55ch;
+    color: var(--secondary);
 
-    /* Añade estos estilos para centrar el contenido verticalmente */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -447,40 +454,33 @@ body{
 .seccion4 {
     
     width: 100%;
-    height: 100vh;
-}
-.seccion4 .container {
-    position: relative;
-    background-color: var(--primary);
-
+    height: 100%;
 }
 
 .seccion4 .h2 {
-    position: absolute;
+
     font-size: 180px;
     color: var(--secondary);
-    writing-mode: vertical-rl;
-    height: 100%;
-    transform: rotate(180deg);
     text-align: start;
-    margin: auto;
+    
 }
 
 .seccion4 .flex2 {
-    margin: 0 0 0 300px;
     height: 100vh;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .seccion4 .flex2 .subdiv {
     display: flex;
-    justify-content:space-between;
+    flex-direction: column;
     align-items: center;
     padding: 0.5rem 0;
-    z-index: 10;
+    flex-wrap: wrap;
+    justify-content: center;
+    
 }
 
 .seccion4 .flex2 .subdiv .h5 {
@@ -493,30 +493,19 @@ body{
 }
 
 .seccion4 .flex2 .subdiv .ul {
-
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: column;
     font-family: var(--Tsecundaria);
     font-size: 1rem;
-    width: 445px;
+    justify-content: center;
+    align-items: center;
 }
 
 .seccion4 .flex2 .subdiv .ul .li {
     margin: 0.5rem 0px;
     font-family: var(--Tsecundaria);
     color: var(--gris);
-}
-
-.seccion4 .container .img {
-    width: 50%;
-    height: 50%;
-    object-fit: contain;
-    position: absolute;
-    z-index: 1;
-
-    top: 50%; /* Ajusta la posición vertical según sea necesario */
-    right: 0; /* Posiciona la imagen a la derecha de la pantalla */
-    left: 50%;
-    transform: translateY(-50%);
-    opacity: 0.3;
 }
 
 
@@ -526,7 +515,6 @@ body{
 
 /* coctactame */
 .seccion5{
-    position: relative;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -535,12 +523,7 @@ body{
     height: 100vh;
 }
 
-.seccion5 .img {
-    position: absolute;
-    z-index: -1;
-    height:100%;
-    opacity: 0.3;
-}
+
 
 .seccion5 .h2{
     padding: 1rem;
@@ -556,15 +539,22 @@ body{
     align-items: center;
 }
 
-.seccion5 .ul .li {
+
+.seccion5 .ul .li .a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100px;
     height: 100px;
-    background-color: var(--secondary);
     border-radius: 50%;
+    background-color: var(--secondary); /* Puedes ajustar el color del fondo según tu diseño */
+    margin: 0rem 0.5rem;
+    transition: all 0.3s ease; /* Agregamos una transición suave */
+}
 
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.seccion5 .li .a:hover {
+
+    scale: 1.5;
 }
 
 
@@ -585,102 +575,47 @@ body{
 
 
 
-/* .separator {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    display: flex;
-    overflow: hidden;
-    animation: moveSeparator 10s linear infinite;
-}
 
-.img1, .img2 {
-    flex: 1;
-    height: 300px;
-    object-fit: contain;
-}
 
-.img1 {
-    background-color: red;
-}
 
-.img2 {
-    background-color: blue;
-}
-
-@keyframes moveSeparator {
-    0%, 100% {
-        transform: translateX(0%);
+@media only screen and (max-width: 930px) {
+    .seccion5 .h2,.seccion3 .h2,.seccion4 .h2,.seccion2 .h2{
+      font-size: 130px; /* Cambiar el tamaño cuando el ancho de la pantalla es 930px o menos */
     }
-    50% {
-        transform: translateX(-100%);
+    .seccion1 .section .h2 {
+        font-size: 100px;
+    } 
+    
+  }
+
+
+
+  @media only screen and (max-width: 670px) {
+    .seccion5 .h2,.seccion3 .h2,.seccion4 .h2,.seccion2 .h2{
+      font-size: 70px; /* Cambiar el tamaño cuando el ancho de la pantalla es 930px o menos */
     }
-} */
+    .seccion1 .section .h2 {
+        font-size: 50px;
+    }
+    .seccion3 .grid {
+        margin: auto;
 
-
-.separator {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    display: flex;
-    overflow: hidden;
-}
-
-.separator .flying {
-    width: 100%; /* Cambiar el ancho de las nubes */
-    height: 300px;
-    opacity: 1;
-}
-
-/* Añadir clases únicas para las imágenes */
-.separator .flying:nth-child(1) {
-    position: absolute;
-    background-color: red;
-    animation: flyAnimation1 5s linear infinite;
-    animation-delay: 5s; /* Aplicar la animación 1 */
-}
-
-.separator .flying:nth-child(2) {
-    position: absolute;
-    background-color: blue;
-    animation: flyAnimation2 5s linear infinite; /* Aplicar la animación 2 */
-}
-
-@keyframes flyAnimation1 {
-    0% {
-        transform: translateX(-50%); /* Posición inicial */
       }
-      100% {
-        transform: translateX(100%); /* Posición final */
-      }
-}
+    .seccion4 .flex2 .subdiv .ul {
 
-@keyframes flyAnimation2 {
-    0% {
-        transform: translateX(50%); /* Posición inicial */
-      }
-      100% {
-        transform: translateX(200%); /* Posición final */
-      }
-}
+        font-size: 0.8rem;
 
-
-
-
-/* @keyframes moveImage {
-    0% {
-        transform: translateX(-100%);
     }
-    100% {
-        transform: translateX(100%);
-    }
-}
+  }
 
-@keyframes moveImage2 {
-    0% {
-        transform: translateX(0%);
+  
+@media only screen and (max-width: 390px) {
+    .seccion1 .section .p {
+    font-size: 1em;
+    font-family: var(--Tsecundaria);
+    overflow-wrap: break-word;
+    max-width: 37ch;
+    padding: 10px;
     }
-    100% {
-        transform: translateX(100%);
-    }
-} */
+    
+  }
