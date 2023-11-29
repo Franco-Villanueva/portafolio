@@ -130,7 +130,7 @@ body{
     background-color: black;
     z-index: -1;
     filter: blur(2em);
-    animation: circulo1 20s linear infinite both;
+    animation: circulo1 30s linear infinite both;
 }
 
 .circulos .circulo {
@@ -150,7 +150,7 @@ body{
         transform: rotate(0deg) scale(3);
     }
     to{
-        transform: rotate(360deg) scale(3);
+        transform: rotate(360deg) scale(5);
     }
 }
 .circulos .circulo-1 .path{
