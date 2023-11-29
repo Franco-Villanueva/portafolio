@@ -179,28 +179,6 @@ body{
 }
 
 
-/* .header {
-    width: 100%;
-    min-height: 5em;
-    background-color: #BBB0A4;
-}
-
-.header .nav {
- background-color: red;
-}
-
-.header .ul{
-
-}
-
-.header .li{
-
-}
-
-.header .li .a{
-
-} */
-
 .header {
     position: fixed;
     bottom: 0;
@@ -232,9 +210,9 @@ body{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.736); /* Puedes ajustar el color del fondo según tu diseño */
+    background-color: rgba(255, 255, 255, 0.736);
     margin: 0rem 0.5rem;
-    transition: background-color 0.3s ease; /* Agregamos una transición suave */
+    transition: background-color 0.3s ease; 
 }
 
 .header .li .a:hover {
@@ -474,29 +452,27 @@ body{
     height: auto;
   }
 
-  
-  /* Estilos para el título h2 en la sección 3 */
   .seccion3 .h2 {
     padding: 0 1em 0 0;
-    font-size: 190px; /* Ajusta el tamaño según sea necesario */
+    font-size: 190px;
     color: var(--secondary);
     text-align: end;
     text-wrap: nowrap;
   }
   
-  /* Estilos para los elementos flex dentro de la sección 3 */
+  
   .seccion3 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); /* Define la cuadrícula con columnas autoajustables */
-    padding: 20px; /* Ajusta el relleno según sea necesario */
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    padding: 20px;
     margin: 0px 25%;
   }
 
   .seccion3 .grid .box {
-    /* Ajustes para cada cuadro dentro de la cuadrícula */
-    background-color: rgba(0, 0, 0, 0.2); /* Ajusta el color de fondo según sea necesario */
 
-    padding: 2rem; /* Ajusta el relleno según sea necesario */
+    background-color: rgba(0, 0, 0, 0.2); 
+
+    padding: 2rem; 
     border-radius: 1rem;
     display: flex;
     flex-flow: column nowrap;
@@ -637,7 +613,7 @@ body{
 
 .seccion5 .h2{
     padding: 1rem;
-    font-size: 190px; /* Ajusta el tamaño según sea necesario */
+    font-size: 190px;
     color: var(--secondary);
     text-align: center;
 }
@@ -657,9 +633,9 @@ body{
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: var(--secondary); /* Puedes ajustar el color del fondo según tu diseño */
+    background-color: var(--secondary); 
     margin: 0rem 0.5rem;
-    transition: all 0.3s ease; /* Agregamos una transición suave */
+    transition: all 0.3s ease; 
 }
 
 .seccion5 .li .a:hover {
@@ -696,7 +672,7 @@ body{
 
 @media only screen and (max-width: 930px) {
     .seccion5 .h2,.seccion3 .h2,.seccion4 .h2,.seccion2 .h2{
-      font-size: 130px; /* Cambiar el tamaño cuando el ancho de la pantalla es 930px o menos */
+      font-size: 130px;
     }
     .seccion1 .section .h2 {
         font-size: 100px;
@@ -708,7 +684,7 @@ body{
 
   @media only screen and (max-width: 670px) {
     .seccion5 .h2,.seccion3 .h2,.seccion4 .h2,.seccion2 .h2{
-      font-size: 70px; /* Cambiar el tamaño cuando el ancho de la pantalla es 930px o menos */
+      font-size: 70px;
     }
     .seccion1 .section .h2 {
         font-size: 50px;
