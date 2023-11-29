@@ -129,14 +129,14 @@ body{
     left: 0;
     background-color: black;
     z-index: -1;
-    filter: blur(2em);
+    filter: blur(15px);
     animation: circulo1 30s linear infinite both;
 }
 
 .circulos .circulo {
     position: absolute;
-    width: 50%;
-    height: 50%;
+    width: 45%;
+    height: 45%;
     animation: circulo1 100s linear infinite both;
     
 }
@@ -147,7 +147,7 @@ body{
 }
 @keyframes circulo1{
     from{
-        transform: rotate(0deg) scale(3);
+        transform: rotate(0deg) scale(3.5);
     }
     to{
         transform: rotate(360deg) scale(5);
