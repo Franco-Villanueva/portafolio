@@ -710,7 +710,7 @@ body{
   }
 
   
-@media only screen and (min-width: 300px) and (max-width: 450px) {
+  @media only screen and (max-width: 449px){
     .seccion1 .section .p {
     font-size: 1em;
     font-family: var(--Tsecundaria);
