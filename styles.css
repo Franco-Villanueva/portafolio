@@ -110,7 +110,7 @@ body{
     font-family: var(--Tprincipal);
     font-size: 100%;
     min-height: 100vh;
-    
+    background-color: black;
     font-smooth: always;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -129,36 +129,50 @@ body{
     left: 0;
     background-color: black;
     z-index: -1;
-    filter: blur(15px);
-    animation: circulo1 30s linear infinite both;
+    filter: blur(30px);
+    animation: circulo2 40s linear infinite both;
 }
 
 .circulos .circulo {
     position: absolute;
-    width: 45%;
-    height: 45%;
-    animation: circulo1 100s linear infinite both;
+    width: 70%;
+    height: 70%;
+    animation: circulo1 40s linear infinite both;
     
 }
-.circulos .circulo-1{
-    top: 0%;
-    left: 0%;
-    
-}
+
+
 @keyframes circulo1{
     from{
         transform: rotate(0deg) scale(3.5);
     }
     to{
-        transform: rotate(360deg) scale(5);
+        transform: rotate(360deg) scale(4);
     }
 }
+@keyframes circulo2{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.circulos .circulo-1{
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;   
+}
 .circulos .circulo-1 .path{
-    fill: red;
+    fill: blue;
 }
 .circulos .circulo-2{
     top: 0%;
     right: 0%;
+    width: 80%;
+    height: 80%;
 }
 .circulos .circulo-2 .path{
     fill: yellow;
@@ -168,11 +182,13 @@ body{
     left: 0%;
 }
 .circulos .circulo-3 .path{
-    fill: blue;
+    fill: red;
 }
 .circulos .circulo-4{
     bottom: 0%;
     right: 0%;
+    width: 40%;
+    height: 50%;
 }
 .circulos .circulo-4 .path{
     fill: green;
@@ -683,6 +699,23 @@ body{
 
 
   @media only screen and (max-width: 670px) {
+    .circulos {
+        background-color: inherit;
+        filter: none; /* Eliminar el filtro de desenfoque */
+        animation: none; /* Desactivar la animación */
+    }
+
+    .circulos .circulo {
+        display: none; /* Ocultar los círculos en dispositivos móviles */
+    }
+
+    body {
+        background-image: url('./Captura\ de\ pantalla\ 2023-12-04\ 182647.png');
+        background-size: cover; /* Ajustar el tamaño de la imagen para cubrir todo el body */
+        background-position: center; /* Centrar la imagen */
+        background-repeat: no-repeat; /* Evitar que la imagen se repita */
+    }
+    
     .seccion5 .h2,.seccion3 .h2,.seccion4 .h2,.seccion2 .h2{
       font-size: 70px;
     }
@@ -710,7 +743,24 @@ body{
   }
 
   
-  @media only screen and (max-width: 449px){
+  @media only screen and (max-width: 500px){
+    .circulos {
+        background-color: inherit;
+        filter: none; /* Eliminar el filtro de desenfoque */
+        animation: none; /* Desactivar la animación */
+    }
+
+    .circulos .circulo {
+        display: none; /* Ocultar los círculos en dispositivos móviles */
+    }
+
+    body {
+        background-image: url('./Captura\ de\ pantalla\ 2023-12-04\ 182647.png');
+        background-size: cover; /* Ajustar el tamaño de la imagen para cubrir todo el body */
+        background-position: center; /* Centrar la imagen */
+        background-repeat: no-repeat; /* Evitar que la imagen se repita */
+    }
+
     .seccion1 .section .p {
     font-size: 1em;
     font-family: var(--Tsecundaria);
